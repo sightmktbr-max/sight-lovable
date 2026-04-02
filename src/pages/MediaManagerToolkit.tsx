@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, Check } from "lucide-react";
-import estruturaImage from "@/assets/MediaManagerToolkitEstruturadeCampanha.png";
-import orcamentosImage from "@/assets/MediaManagerToolkitOrcamentos.png";
-import briefingImage from "@/assets/MediaManagerToolkitTemplateDeBriefing.png";
+import estruturaImage from "@/assets/mmt-campanha.png";
+import orcamentosImage from "@/assets/mmtorcamento.png";
+import briefingImage from "@/assets/mmtbrief.png";
 import propostaImage from "@/assets/mmt-proposta.png";
 import manualClienteImage from "@/assets/mmt-manualcliente.png";
 import relatorioImage from "@/assets/mmt-relatorio.png";
@@ -231,3 +231,4 @@ const MediaManagerToolkit = () => {
 };
 
 export default MediaManagerToolkit;
+
