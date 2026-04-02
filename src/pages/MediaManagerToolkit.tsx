@@ -5,7 +5,7 @@ import mockupImage from "@/assets/mockup.png";
 import problemChaosImage from "@/assets/problem-chaos.png";
 import beforeAfterImage from "@/assets/before-after.png";
 import estruturaImage from "@/assets/MediaManagerToolkitEstruturaDeCampanha.png";
-import orcamentosImage from "@/assets/MediaManagerToolkitOrcamentos.png";
+import orcamentosImage from "@/assets/mmtorcamento.png";
 import briefingImage from "@/assets/MediaManagerToolkitTemplateDeBriefing.png";
 
 const problems = [
