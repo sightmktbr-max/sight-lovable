@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, AlertTriangle, Clock, TrendingDown, Layers, CheckCircle, Zap, BarChart3, FileText } from "lucide-react";
-import mockupImage from "@/assets/mockup.jpg";
-import problemChaosImage from "@/assets/problem-chaos.jpg";
-import beforeAfterImage from "@/assets/before-after.jpg";
+import mockupImage from "@/assets/mockup.png";
+import problemChaosImage from "@/assets/problem-chaos.png";
+import beforeAfterImage from "@/assets/before-after.png";
 import estruturaImage from "@/assets/MediaManagerToolkitEstruturadeCampanha.png";
 import orcamentosImage from "@/assets/MediaManagerToolkitOrcamentos.png";
 import briefingImage from "@/assets/MediaManagerToolkitTemplateDeBriefing.png";
