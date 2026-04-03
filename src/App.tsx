@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Products from "./pages/Products.tsx";
 import MediaManagerToolkit from "./pages/MediaManagerToolkit.tsx";
 import SightOS from "./pages/SightOS.tsx";
+import AIMediaOperator from "./pages/AIMediaOperator.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/produtos" element={<Products />} />
           <Route path="/produtos/media-manager-toolkit" element={<MediaManagerToolkit />} />
           <Route path="/produtos/sight-os" element={<SightOS />} />
+          <Route path="/produtos/ai-media-operator" element={<AIMediaOperator />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
@@ -34,3 +36,4 @@ const App = () => (
 );
 
 export default App;
+
