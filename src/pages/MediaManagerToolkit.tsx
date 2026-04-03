@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, Check } from "lucide-react";
-import estruturaImage from "@/assets/mmt-campanha.png";
-import orcamentosImage from "@/assets/mmtorcamento.png";
-import briefingImage from "@/assets/mmtbrief.png";
+import estruturaImage from "@/assets/MediaManagerToolkitEstruturadeCampanha.png";
+import orcamentosImage from "@/assets/MediaManagerToolkitOrcamentos.png";
+import briefingImage from "@/assets/MediaManagerToolkitTemplateDeBriefing.png";
 import propostaImage from "@/assets/mmt-proposta.png";
 import manualClienteImage from "@/assets/mmt-manualcliente.png";
 import relatorioImage from "@/assets/mmt-relatorio.png";
@@ -63,7 +63,7 @@ const features = [
 const MediaManagerToolkit = () => {
   return (
     <Layout>
-      {/* ═══════════════════ HERO ═══════════════════ */}
+      {/* ═══════════════════ HERO (dark) ═══════════════════ */}
       <section className="section-padding !pb-0">
         <div className="container-narrow mx-auto">
           <FadeIn>
@@ -112,33 +112,29 @@ const MediaManagerToolkit = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ HERO VISUAL — Floating Mockup Composition ═══════════════════ */}
-      <section className="section-padding !pt-16 md:!pt-24 !pb-0">
+      {/* ═══════════════════ HERO VISUAL (light) ═══════════════════ */}
+      <section className="section-padding !pt-16 md:!pt-24 section-light">
         <div className="container-wide mx-auto">
           <FadeIn delay={0.1}>
             <div className="relative flex items-center justify-center py-12 md:py-20">
-              {/* Subtle glow behind */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[70%] h-[60%] rounded-full bg-foreground/[0.03] blur-3xl" />
+                <div className="w-[70%] h-[60%] rounded-full bg-black/[0.03] blur-3xl" />
               </div>
 
-              {/* Side card — left (budget) */}
               <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-[30%] z-10">
-                <div className="rounded-sm border border-border/60 overflow-hidden shadow-2xl shadow-black/40 -rotate-2 translate-x-4">
+                <div className="rounded-sm border border-border/60 overflow-hidden shadow-2xl shadow-black/20 -rotate-2 translate-x-4">
                   <img src={orcamentosImage} alt="Orçamento e precificação" className="w-full h-auto" />
                 </div>
               </div>
 
-              {/* Center card — briefing (hero focus) */}
               <div className="relative z-20 w-[85%] md:w-[50%]">
-                <div className="rounded-sm border border-border/80 overflow-hidden shadow-2xl shadow-black/60">
+                <div className="rounded-sm border border-border/80 overflow-hidden shadow-2xl shadow-black/30">
                   <img src={briefingImage} alt="Template de Briefing" className="w-full h-auto" />
                 </div>
               </div>
 
-              {/* Side card — right (structure) */}
               <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[30%] z-10">
-                <div className="rounded-sm border border-border/60 overflow-hidden shadow-2xl shadow-black/40 rotate-2 -translate-x-4">
+                <div className="rounded-sm border border-border/60 overflow-hidden shadow-2xl shadow-black/20 rotate-2 -translate-x-4">
                   <img src={estruturaImage} alt="Estrutura de conta" className="w-full h-auto" />
                 </div>
               </div>
@@ -147,13 +143,8 @@ const MediaManagerToolkit = () => {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="container-wide mx-auto">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* ═══════════════════ FEATURES — 8 Blocks ═══════════════════ */}
-      <section id="whats-included" className="section-padding">
+      {/* ═══════════════════ FEATURES HEADER (dark) ═══════════════════ */}
+      <section className="section-padding !pb-0">
         <div className="container-narrow mx-auto">
           <FadeIn>
             <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
@@ -166,42 +157,44 @@ const MediaManagerToolkit = () => {
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-text-body text-lg leading-relaxed max-w-2xl mb-20">
+            <p className="text-text-body text-lg leading-relaxed max-w-2xl mb-10">
               Cada parte da sua operação organizada em um único fluxo — do planejamento à execução.
             </p>
           </FadeIn>
-
-          <div className="space-y-24">
-            {features.map((feature, i) => {
-              const isReversed = i % 2 === 1;
-              return (
-                <FadeIn key={i} delay={0.06}>
-                  <div className={`flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-10 md:gap-16 items-center`}>
-                    <div className="md:w-3/5 rounded-sm overflow-hidden border border-border/60 shadow-lg shadow-black/20">
-                      <img src={feature.image} alt={feature.title} className="w-full h-auto" />
-                    </div>
-                    <div className="md:w-2/5">
-                      <span className="text-xs font-medium tracking-[0.15em] uppercase text-text-subtle mb-3 block">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className="font-serif text-2xl text-foreground mb-3">{feature.title}</h3>
-                      <p className="text-text-body leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="container-wide mx-auto">
-        <div className="h-px bg-border" />
-      </div>
+      {/* ═══════════════════ FEATURE BLOCKS (alternating) ═══════════════════ */}
+      {features.map((feature, i) => {
+        const isLight = i % 2 === 0;
+        const isReversed = i % 2 === 1;
+        return (
+          <section
+            key={i}
+            className={`section-padding ${isLight ? "section-light" : ""}`}
+          >
+            <div className="container-narrow mx-auto">
+              <FadeIn delay={0.06}>
+                <div className={`flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-10 md:gap-16 items-center`}>
+                  <div className="md:w-3/5 rounded-sm overflow-hidden border border-border/60 shadow-lg shadow-black/20">
+                    <img src={feature.image} alt={feature.title} className="w-full h-auto" />
+                  </div>
+                  <div className="md:w-2/5">
+                    <span className="text-xs font-medium tracking-[0.15em] uppercase text-text-subtle mb-3 block">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-serif text-2xl text-foreground mb-3">{feature.title}</h3>
+                    <p className="text-text-body leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </section>
+        );
+      })}
 
-      {/* ═══════════════════ FINAL CTA ═══════════════════ */}
-      <section className="section-padding">
+      {/* ═══════════════════ FINAL CTA (light) ═══════════════════ */}
+      <section className="section-padding section-light">
         <div className="container-narrow mx-auto text-center">
           <FadeIn>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
@@ -218,7 +211,7 @@ const MediaManagerToolkit = () => {
               href="https://pay.kiwify.com.br/gnqfhMc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-3 bg-foreground text-background px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity"
             >
               Acessar o sistema
               <ArrowRight size={18} />
@@ -231,4 +224,3 @@ const MediaManagerToolkit = () => {
 };
 
 export default MediaManagerToolkit;
-
