@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import { ArrowRight } from "lucide-react";
 import toolkitImage from "@/assets/media-manager-toolkit.png";
 import sightOsImage from "@/assets/sight-os.png";
+import aiMediaOperatorImage from "@/assets/ai-media-operator-hero.png";
 
 const products = [
   {
@@ -14,6 +15,15 @@ const products = [
     path: "/produtos/media-manager-toolkit",
     cta: "Ver produto",
     image: toolkitImage,
+  },
+  {
+    tag: "Em breve",
+    title: "AI Media Operator",
+    description:
+      "Curso completo para operar mídia paga com IA usando Claude + ChatGPT — do planejamento à análise de resultados.",
+    path: "/produtos/ai-media-operator",
+    cta: "Ver mais",
+    image: aiMediaOperatorImage,
   },
   {
     tag: "Em breve",
