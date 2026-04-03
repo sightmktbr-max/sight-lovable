@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import { ArrowRight } from "lucide-react";
 import toolkitImage from "@/assets/2ae6931f-442e-44d6-8d63-7bb76075bcd0.png";
 import sightOsImage from "@/assets/9ce797cc-eaf2-4814-9511-1bdb60e05e95.png";
+import aiMediaOperatorImage from "@/assets/ai-media-operator-hero.png";
 import sublogo from "@/assets/sight-sublogo.png";
 
 const Index = () => {
@@ -166,9 +167,34 @@ const Index = () => {
                 </div>
               </Link>
             </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <Link
+                to="/produtos/ai-media-operator"
+                className="block bg-card border border-border rounded-sm hover:shadow-lg transition-all group overflow-hidden"
+              >
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img src={aiMediaOperatorImage} alt="AI Media Operator" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-8">
+                  <p className="text-xs font-medium tracking-widest uppercase text-text-subtle mb-3">
+                    Em breve
+                  </p>
+                  <h3 className="font-serif text-2xl text-foreground mb-3">
+                    AI Media Operator
+                  </h3>
+                  <p className="text-text-body text-sm leading-relaxed mb-6">
+                    Curso completo para operar mídia paga com IA usando Claude + ChatGPT.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm text-foreground font-medium group-hover:gap-3 transition-all">
+                    Ver mais <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            </FadeIn>
           </div>
 
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.35}>
             <div className="mt-12 text-center">
               <Link
                 to="/produtos"
