@@ -66,7 +66,7 @@ const Index = () => {
           <FadeIn delay={0.15}>
             <p className="text-text-body text-lg leading-relaxed max-w-2xl mb-6">
               A Sight nasceu para auxiliar analistas de mídia, freelancers e agências a organizarem 
-              sua operação. Acreditamos que performance sustentável vem de sistemas bem estruturados — 
+              sua operação. Acreditamos que performance sustentável vem de sistemas bem estruturados - 
               não de atalhos ou táticas isoladas.
             </p>
           </FadeIn>
