@@ -1,30 +1,48 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, Check, Zap, Target, BarChart3, FileText, Brain, Layers, Clock, AlertTriangle, Send } from "lucide-react";
+import {
+  ArrowRight, Check, Zap, Target, BarChart3, FileText, Brain,
+  Layers, Clock, AlertTriangle, Send, XCircle, CheckCircle2,
+  Sparkles, PenTool, LineChart, LayoutTemplate
+} from "lucide-react";
 import heroImage from "@/assets/ai-media-operator-hero.png";
 
-const problems = [
-  { icon: AlertTriangle, text: "Campanhas sem consistência - cada conta opera de um jeito" },
-  { icon: Layers, text: "Falta de organização — briefings perdidos, dados espalhados" },
-  { icon: Target, text: "Dificuldade de escalar — o gargalo é sempre operacional" },
-  { icon: Clock, text: "Perda de tempo — retrabalho constante em tarefas repetitivas" },
+/* ─── Data ─── */
+
+const identificationItems = [
+  "Roda campanhas mas tudo parece improviso",
+  "Perde tempo com tarefas repetitivas",
+  "Tem dificuldade de escalar clientes",
+  "Sente que está sempre apagando incêndio",
+];
+
+const systemIncludes = [
+  { icon: Zap, label: "Sistema de prompts prontos" },
+  { icon: LayoutTemplate, label: "Estrutura de campanha" },
+  { icon: PenTool, label: "Geração de criativos" },
+  { icon: LineChart, label: "Análise de performance" },
+  { icon: FileText, label: "Relatórios claros" },
+];
+
+const beforeItems = [
+  "Campanhas sem padrão",
+  "Decisões no feeling",
+  "Retrabalho constante",
+];
+
+const afterItems = [
+  "Operação estruturada",
+  "Decisões baseadas em dados",
+  "Processos replicáveis",
 ];
 
 const learnings = [
-  "Como usar Claude gratuitamente para operações de mídia",
-  "Como criar skills reutilizáveis para cada etapa do processo",
-  "Como estruturar campanhas inteiras com IA em minutos",
-  "Como gerar relatórios automáticos com dados reais",
-  "Como padronizar sua operação com workflows prontos",
-  "Como escalar sua operação sem aumentar custo operacional",
-];
-
-const solutions = [
-  { icon: Brain, title: "Criação de estratégias", desc: "Use IA para analisar mercado, concorrência e definir estratégias de campanha com profundidade." },
-  { icon: FileText, title: "Copies e roteiros", desc: "Gere copies para anúncios, roteiros para vídeos e variações de criativos em segundos." },
-  { icon: BarChart3, title: "Análise de performance", desc: "Interprete dados de campanha com IA e extraia insights acionáveis automaticamente." },
-  { icon: Zap, title: "Relatórios automáticos", desc: "Transforme dados brutos em relatórios profissionais prontos para o cliente." },
+  "Criar estratégias completas com IA",
+  "Gerar criativos que convertem",
+  "Analisar campanhas com clareza",
+  "Estruturar relatórios profissionais",
+  "Otimizar campanhas com lógica",
 ];
 
 const steps = [
@@ -36,9 +54,19 @@ const steps = [
 const offerItems = [
   "Acesso completo ao curso gravado",
   "Biblioteca de skills prontas para mídia paga",
-  "Workflows completos de operação com IA",
+  "Prompts estruturados para cada etapa",
+  "Workflows aplicáveis na sua operação",
   "Atualizações futuras inclusas",
 ];
+
+const resultsItems = [
+  "Estruturar campanhas em minutos",
+  "Criar criativos com consistência",
+  "Entregar relatórios claros para clientes",
+  "Escalar sua operação sem aumentar custo",
+];
+
+/* ─── Page ─── */
 
 const AIMediaOperator = () => {
   const [email, setEmail] = useState("");
@@ -63,22 +91,25 @@ const AIMediaOperator = () => {
 
   return (
     <Layout>
-      {/* ═══════════════ HERO — dark ═══════════════ */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section className="section-padding min-h-[85vh] flex items-center">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-6">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-8">
               Curso · AI + Mídia Paga
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-foreground mb-6 leading-[1.08] max-w-3xl">
-              Você não precisa de mais conhecimento de tráfego. Você precisa de um sistema.
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-foreground mb-8 leading-[1.08] max-w-3xl">
+              Você não precisa de mais conhecimento de tráfego.{" "}
+              <span className="text-text-body">
+                Você precisa de um sistema que funcione com vários clientes ao mesmo tempo.
+              </span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-lg md:text-xl text-text-body leading-relaxed max-w-2xl mb-10">
-              Aprenda a operar mídia paga com IA usando Claude + ChatGPT — sem código, sem automações complexas.
+            <p className="text-lg md:text-xl text-text-body leading-relaxed max-w-2xl mb-12">
+              Aprenda a estruturar, executar e otimizar campanhas com IA usando Claude + ChatGPT — sem código e sem automações complexas.
             </p>
           </FadeIn>
           <FadeIn delay={0.14}>
@@ -93,7 +124,7 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ HERO VISUAL — light ═══════════════ */}
+      {/* ═══════════════ HERO VISUAL ═══════════════ */}
       <section className="section-padding section-light">
         <div className="container-wide mx-auto">
           <FadeIn>
@@ -104,37 +135,42 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ PROBLEMA — dark ═══════════════ */}
+      {/* ═══════════════ IDENTIFICAÇÃO ═══════════════ */}
       <section className="section-padding">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
-              O problema
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
+              Isso soa familiar?
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12 max-w-2xl">
-              Você sabe operar. Mas opera no improviso.
+              Se você se identifica com algum desses cenários:
             </h2>
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-6">
-            {problems.map((p, i) => (
-              <FadeIn key={i} delay={i * 0.06}>
-                <div className="flex items-start gap-4 p-6 border border-border rounded-sm bg-card">
-                  <p.icon size={20} className="text-text-subtle mt-0.5 shrink-0" />
-                  <p className="text-text-body leading-relaxed">{p.text}</p>
+          <div className="space-y-5 mb-14">
+            {identificationItems.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <div className="flex items-center gap-4 p-5 border border-border rounded-sm bg-card">
+                  <AlertTriangle size={18} className="text-text-subtle shrink-0" />
+                  <p className="text-text-body text-lg">{item}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.3}>
+            <p className="font-serif text-2xl md:text-3xl text-foreground">
+              Esse sistema foi feito pra você.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* ═══════════════ BIG IDEA — light ═══════════════ */}
+      {/* ═══════════════ BIG IDEA ═══════════════ */}
       <section className="section-padding section-light">
         <div className="container-narrow mx-auto text-center">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-6">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-6">
               A verdade
             </p>
           </FadeIn>
@@ -151,31 +187,25 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ SOLUÇÃO — dark ═══════════════ */}
+      {/* ═══════════════ VISUAL DO PRODUTO ═══════════════ */}
       <section className="section-padding">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
-              A solução
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
+              O que está dentro
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4 max-w-2xl">
-              Um sistema completo de operação com IA.
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-14 max-w-2xl">
+              Dentro do AI Media Operator você recebe:
             </h2>
           </FadeIn>
-          <FadeIn delay={0.1}>
-            <p className="text-text-body text-lg leading-relaxed max-w-2xl mb-16">
-              Do planejamento à análise de resultados — cada etapa da sua operação estruturada com inteligência artificial.
-            </p>
-          </FadeIn>
-          <div className="grid md:grid-cols-2 gap-8">
-            {solutions.map((s, i) => (
-              <FadeIn key={i} delay={i * 0.06}>
-                <div className="p-8 border border-border rounded-sm bg-card">
-                  <s.icon size={24} className="text-foreground mb-4" />
-                  <h3 className="font-serif text-xl text-foreground mb-3">{s.title}</h3>
-                  <p className="text-text-body text-sm leading-relaxed">{s.desc}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {systemIncludes.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <div className="p-8 border border-border rounded-sm bg-card text-center">
+                  <item.icon size={28} className="text-foreground mx-auto mb-4" />
+                  <p className="text-foreground font-medium text-lg">{item.label}</p>
                 </div>
               </FadeIn>
             ))}
@@ -183,27 +213,77 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ O QUE VOCÊ VAI APRENDER — light ═══════════════ */}
+      {/* ═══════════════ ANTES / DEPOIS ═══════════════ */}
       <section className="section-padding section-light">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
+              Transformação
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.06}>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-14">
+              O que muda na sua operação.
+            </h2>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-8">
+            <FadeIn delay={0.1}>
+              <div className="p-8 border border-border rounded-sm bg-card">
+                <div className="flex items-center gap-2 mb-6">
+                  <XCircle size={20} className="text-text-subtle" />
+                  <p className="text-sm font-medium tracking-[0.15em] uppercase text-text-subtle">Antes</p>
+                </div>
+                <ul className="space-y-4">
+                  {beforeItems.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-text-body text-lg">
+                      <span className="w-1.5 h-1.5 rounded-full bg-text-subtle shrink-0" style={{ backgroundColor: "hsl(var(--text-subtle))" }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.16}>
+              <div className="p-8 border border-border rounded-sm bg-card">
+                <div className="flex items-center gap-2 mb-6">
+                  <CheckCircle2 size={20} className="text-foreground" />
+                  <p className="text-sm font-medium tracking-[0.15em] uppercase text-foreground">Depois</p>
+                </div>
+                <ul className="space-y-4">
+                  {afterItems.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-foreground text-lg font-medium">
+                      <Check size={16} className="text-foreground shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ O QUE VOCÊ VAI APRENDER ═══════════════ */}
+      <section className="section-padding">
+        <div className="container-narrow mx-auto">
+          <FadeIn>
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
               Conteúdo
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">
-              O que você vai aprender
+              Você vai aprender a:
             </h2>
           </FadeIn>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="space-y-4">
             {learnings.map((item, i) => (
               <FadeIn key={i} delay={i * 0.04}>
-                <div className="flex items-start gap-3 py-4">
-                  <span className="flex items-center justify-center w-5 h-5 rounded-full border border-border mt-0.5 shrink-0">
-                    <Check size={12} className="text-foreground" />
+                <div className="flex items-center gap-4 py-5 border-b border-border">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full border border-border shrink-0">
+                    <Check size={14} className="text-foreground" />
                   </span>
-                  <p className="text-text-body leading-relaxed">{item}</p>
+                  <p className="text-text-body text-lg">{item}</p>
                 </div>
               </FadeIn>
             ))}
@@ -211,11 +291,11 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ COMO FUNCIONA — dark ═══════════════ */}
-      <section className="section-padding">
+      {/* ═══════════════ COMO FUNCIONA ═══════════════ */}
+      <section className="section-padding section-light">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
               Como funciona
             </p>
           </FadeIn>
@@ -228,7 +308,7 @@ const AIMediaOperator = () => {
             {steps.map((step, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
-                  <span className="font-serif text-5xl md:text-6xl text-foreground/10">{step.number}</span>
+                  <span className="font-serif text-6xl md:text-7xl text-foreground/10 leading-none">{step.number}</span>
                   <div>
                     <h3 className="font-serif text-2xl text-foreground mb-3">{step.title}</h3>
                     <p className="text-text-body leading-relaxed max-w-lg">{step.desc}</p>
@@ -240,42 +320,37 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ DIFERENCIAL + AUTORIDADE — light ═══════════════ */}
-      <section className="section-padding section-light">
+      {/* ═══════════════ DIFERENCIAL + AUTORIDADE ═══════════════ */}
+      <section className="section-padding">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
               Quem criou
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
-              Criado por quem opera, não por quem ensina.
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-8 max-w-2xl">
+              Criado por quem já operou campanhas para Google, Estée Lauder, Dexcom e outras marcas globais.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <div className="space-y-6 max-w-2xl">
-              <p className="text-text-body text-lg leading-relaxed">
-                Este sistema foi desenvolvido por uma especialista com experiência gerenciando grandes contas de mídia paga - de operações locais a campanhas com atuação internacional.
-              </p>
-              <p className="text-text-body text-lg leading-relaxed">
-                Não é teoria. É um método construído na prática, testado em cenários reais, com clientes reais e orçamentos reais. O AI Media Operator é o sistema que usamos internamente — agora disponível para outros profissionais.
-              </p>
-            </div>
+            <p className="text-text-body text-lg leading-relaxed max-w-2xl">
+              Aplicando estrutura de nível enterprise na rotina de gestores. Não é teoria — é um método construído na prática, com clientes reais e orçamentos reais. O AI Media Operator é o sistema que usamos internamente, agora disponível para outros profissionais.
+            </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* ═══════════════ OFERTA — dark ═══════════════ */}
-      <section className="section-padding">
+      {/* ═══════════════ OFERTA ═══════════════ */}
+      <section className="section-padding section-light">
         <div className="container-narrow mx-auto">
           <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
               O que você recebe
             </p>
           </FadeIn>
           <FadeIn delay={0.06}>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12">
               Tudo que você precisa para operar com IA.
             </h2>
           </FadeIn>
@@ -292,7 +367,7 @@ const AIMediaOperator = () => {
                 </FadeIn>
               ))}
             </ul>
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.24}>
               <div className="pt-6 border-t border-border">
                 <p className="text-text-subtle text-sm mb-2 uppercase tracking-widest font-medium">Status</p>
                 <p className="font-serif text-2xl text-foreground">Em breve</p>
@@ -302,16 +377,42 @@ const AIMediaOperator = () => {
         </div>
       </section>
 
-      {/* ═══════════════ CTA FINAL + WAITLIST — light ═══════════════ */}
+      {/* ═══════════════ RESULTADOS ═══════════════ */}
+      <section className="section-padding">
+        <div className="container-narrow mx-auto">
+          <FadeIn>
+            <p className="text-xs font-medium tracking-[0.25em] uppercase text-text-subtle mb-4">
+              Resultados
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.06}>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-12 max-w-2xl">
+              O que você consegue fazer depois disso.
+            </h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {resultsItems.map((item, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <div className="flex items-start gap-4 p-6 border border-border rounded-sm bg-card">
+                  <Sparkles size={20} className="text-foreground mt-0.5 shrink-0" />
+                  <p className="text-text-body text-lg leading-relaxed">{item}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ CTA FINAL + WAITLIST ═══════════════ */}
       <section id="waitlist" className="section-padding section-light">
         <div className="container-narrow mx-auto text-center">
           <FadeIn>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-              Seja o primeiro a acessar.
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 max-w-2xl mx-auto">
+              Pare de operar no improviso. Comece a operar com sistema.
             </h2>
           </FadeIn>
           <FadeIn delay={0.06}>
-            <p className="text-text-body text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-text-body text-lg mb-12 max-w-xl mx-auto leading-relaxed">
               Entre na lista de espera e receba acesso antecipado ao AI Media Operator com condições exclusivas de lançamento.
             </p>
           </FadeIn>
@@ -336,7 +437,7 @@ const AIMediaOperator = () => {
                   className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-8 py-4 text-sm font-medium rounded-sm hover:opacity-90 transition-opacity disabled:opacity-50"
                 >
                   <Send size={16} />
-                  Entrar na lista
+                  Começar agora
                 </button>
               </form>
             )}
