@@ -30,7 +30,7 @@ const About = () => {
           <FadeIn delay={0.2}>
             <p className="text-text-body text-lg leading-relaxed max-w-2xl">
               Acreditamos que a performance sustentável vem de processos bem desenhados, rotinas claras 
-              e uma operação bem estruturada — não de atalhos ou hacks.
+              e uma operação bem estruturada - não de atalhos ou hacks.
             </p>
           </FadeIn>
         </div>
@@ -92,7 +92,7 @@ const About = () => {
                   </p>
                   <p className="text-text-body text-lg leading-relaxed">
                     Sua experiência inclui gestão de equipes, desenvolvimento de processos operacionais
-                    e liderança em projetos de alta complexidade. A Sight é fruto dessa trajetória —
+                    e liderança em projetos de alta complexidade. A Sight é fruto dessa trajetória -
                     um espaço para compartilhar sistemas e metodologias que funcionam na prática.
                   </p>
                 </div>
