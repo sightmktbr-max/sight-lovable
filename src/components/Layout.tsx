@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logoSight from "@/assets/logo-sight.png";
 
 const navItems = [
@@ -11,8 +11,15 @@ const navItems = [
   { label: "Contato", path: "/contato" },
 ];
 
+const productLinks = [
+  { label: "Media Manager Toolkit", path: "/produtos/media-manager-toolkit" },
+  { label: "AI Media Operator", path: "/produtos/ai-media-operator" },
+  { label: "Sight OS", path: "/produtos/sight-os" },
+];
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -26,19 +33,67 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? "text-foreground"
-                    : "text-text-body hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.label === "Produtos" ? (
+                <div
+                  key={item.path}
+                  className="relative group"
+                  onMouseEnter={() => setProductsOpen(true)}
+                  onMouseLeave={() => setProductsOpen(false)}
+                >
+                  <Link
+                    to={item.path}
+                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${
+                      location.pathname.startsWith("/produtos")
+                        ? "text-foreground"
+                        : "text-text-body hover:text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`} />
+                  </Link>
+                  <AnimatePresence>
+                    {productsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+                      >
+                        <div className="bg-background border border-border rounded-sm shadow-lg min-w-[220px] py-2">
+                          {productLinks.map((product) => (
+                            <Link
+                              key={product.path}
+                              to={product.path}
+                              className={`block px-5 py-2.5 text-sm transition-colors ${
+                                location.pathname === product.path
+                                  ? "text-foreground bg-muted"
+                                  : "text-text-body hover:text-foreground hover:bg-muted"
+                              }`}
+                            >
+                              {product.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? "text-foreground"
+                      : "text-text-body hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* Mobile menu toggle */}
@@ -63,18 +118,37 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             >
               <div className="flex flex-col px-6 py-6 gap-4">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setMenuOpen(false)}
-                    className={`text-lg font-medium transition-colors ${
-                      location.pathname === item.path
-                        ? "text-foreground"
-                        : "text-text-body"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
+                  <div key={item.path}>
+                    <Link
+                      to={item.path}
+                      onClick={() => item.label !== "Produtos" && setMenuOpen(false)}
+                      className={`text-lg font-medium transition-colors ${
+                        location.pathname === item.path
+                          ? "text-foreground"
+                          : "text-text-body"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                    {item.label === "Produtos" && (
+                      <div className="flex flex-col gap-2 mt-2 ml-4">
+                        {productLinks.map((product) => (
+                          <Link
+                            key={product.path}
+                            to={product.path}
+                            onClick={() => setMenuOpen(false)}
+                            className={`text-base transition-colors ${
+                              location.pathname === product.path
+                                ? "text-foreground"
+                                : "text-text-body"
+                            }`}
+                          >
+                            {product.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </motion.nav>
