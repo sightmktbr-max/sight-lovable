@@ -51,7 +51,7 @@ const features = [
   {
     image: estruturaImage,
     title: "Planilha de estrutura de campanhas",
-    description: "Defina uma arquitetura clara de campanhas, grupos e estratégias — sem improviso.",
+    description: "Defina uma arquitetura clara de campanhas, grupos e estratégias - sem improviso.",
   },
   {
     image: relatorioImage,
@@ -103,7 +103,7 @@ const MediaManagerToolkit = () => {
               href="https://pay.kiwify.com.br/gnqfhMc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity mb-16"
             >
               Acessar o sistema
               <ArrowRight size={18} />
@@ -145,7 +145,7 @@ const MediaManagerToolkit = () => {
 
       {/* ═══════════════════ FEATURES HEADER (dark) ═══════════════════ */}
       <section className="section-padding !pb-0">
-        <div className="container-narrow mx-auto">
+        <div className="container-narrow mx-auto text-center">
           <FadeIn>
             <p className="text-xs font-medium tracking-[0.2em] uppercase text-text-subtle mb-4">
               O que está incluído
@@ -157,8 +157,8 @@ const MediaManagerToolkit = () => {
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-text-body text-lg leading-relaxed max-w-2xl mb-10">
-              Cada parte da sua operação organizada em um único fluxo — do planejamento à execução.
+            <p className="text-text-body text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+              Cada parte da sua operação organizada em um único fluxo - do planejamento à execução.
             </p>
           </FadeIn>
         </div>
