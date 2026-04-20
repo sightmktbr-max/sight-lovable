@@ -114,21 +114,16 @@ const TemplateClaude = () => {
   setSubmitting(true);
 
   try {
-    const res = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": import.meta.env.VITE_BREVO_API_KEY,
-      },
-      body: JSON.stringify({
-        email: email,
-        attributes: {
-          FIRSTNAME: name,
-        },
-        listIds: [Number(import.meta.env.VITE_BREVO_LIST_ID)],
-        updateEnabled: true,
-      }),
-    });
+    const res = await fetch("https://formspree.io/f/SEU_ID", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name,
+    email,
+  }),
+});
 
     if (!res.ok) {
       throw new Error("Erro ao salvar contato");
