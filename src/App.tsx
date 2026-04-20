@@ -13,6 +13,7 @@ import SightOS from "./pages/SightOS.tsx";
 import AIMediaOperator from "./pages/AIMediaOperator.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+import Diagnostico from "./pages/Diagnostico.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/produtos/ai-media-operator" element={<AIMediaOperator />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/contato" element={<Contact />} />
+          <Route path="/diagnostico" element={<Diagnostico />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
