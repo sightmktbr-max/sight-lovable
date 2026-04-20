@@ -108,27 +108,51 @@ const TemplateClaude = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-    setSubmitting(true);
+  e.preventDefault();
+  if (!validate()) return;
 
-    const subject = encodeURIComponent("Novo lead - Template de Projeto Claude");
-    const body = encodeURIComponent(
-      `Novo download do Template de Projeto Claude:\n\nNome: ${name}\nEmail: ${email}\n\nOrigem: /template-claude`,
-    );
-    // Fire-and-forget mailto opens user's email client to notify the team.
-    // Persistence/auto-email integration can be added later via Lovable Cloud.
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  setSubmitting(true);
+
+  try {
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": import.meta.env.VITE_BREVO_API_KEY,
+      },
+      body: JSON.stringify({
+        email: email,
+        attributes: {
+          FIRSTNAME: name,
+        },
+        listIds: [Number(import.meta.env.VITE_BREVO_LIST_ID)],
+        updateEnabled: true,
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Erro ao salvar contato");
+    }
+
+    // sucesso → libera conteúdo
+    setSubmitted(true);
+
+    toast.success("Email confirmado. Templates liberados abaixo.");
 
     setTimeout(() => {
-      setSubmitted(true);
-      setSubmitting(false);
-      toast.success("Email confirmado. Templates liberados abaixo.");
-      setTimeout(() => {
-        templatesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 400);
-    }, 600);
-  };
+      templatesRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 400);
+
+  } catch (err) {
+    console.error(err);
+    toast.error("Erro ao enviar. Tente novamente.");
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   const handleCopy = async (key: TemplateKey) => {
     const text = contents[key];
