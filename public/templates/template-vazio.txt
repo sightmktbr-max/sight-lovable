@@ -1,0 +1,147 @@
+═══════════════════════════════════════════════════════════════════════════════
+TEMPLATE DE PROJETO CLAUDE - GESTOR DE MÍDIA PAGA
+Copie este conteúdo para Claude > Projetos > Instruções
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTRUÇÕES INICIAIS:
+1. Substitua [PLACEHOLDER] pelos dados reais
+2. Você pode adicionar mais linhas em cada seção
+3. Delete linhas que não se aplicam
+4. Salve e use este projeto em todas as conversas sobre este cliente
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 1: INFORMAÇÕES DO CLIENTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Nome da empresa: [NOME_EMPRESA]
+Website: [URL_SITE]
+Segmento/Indústria: [EX: SaaS, Ecommerce, Serviços, B2B, etc]
+Objetivo principal da mídia paga: [EX: Gerar leads, Aumentar vendas, Awareness, etc]
+Contato principal: [NOME] - [TELEFONE] - [EMAIL]
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 2: PÚBLICO-ALVO
+═══════════════════════════════════════════════════════════════════════════════
+
+Descrição geral do público:
+[DESCREVA quem você quer atingir - persona, tipo de pessoa]
+
+Idade: [EX: 25-40 anos]
+Localização: [EX: Brasil (SP, RJ, MG), ou específica]
+Poder de compra: [EX: A, B, C - ou valor de ticket]
+Profissão/Cargo: [EX: Gerentes de vendas, Empreendedores, Donas de casa]
+Dor principal que resolve: [O problema que vocês resolvem]
+
+Comportamento online:
+[Como este público se comporta online? Plataformas que usa? Quando acessa?]
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 3: CAMPANHAS ATIVAS
+═══════════════════════════════════════════════════════════════════════════════
+
+CAMPANHA 1:
+├─ Nome: [NOME_CAMPANHA]
+├─ Plataforma: [Google Search / Meta / TikTok / LinkedIn / Outro]
+├─ Orçamento mensal: R$ [VALOR]
+├─ KPI principal: [EX: ROAS 3:1 / CPA máximo R$ 50 / CPL máximo R$ 15]
+├─ Status: [Ativa / Teste / Pausada]
+└─ Notas: [Contexto importante sobre esta campanha]
+
+CAMPANHA 2:
+├─ Nome: [NOME_CAMPANHA]
+├─ Plataforma: [Google Search / Meta / TikTok / LinkedIn / Outro]
+├─ Orçamento mensal: R$ [VALOR]
+├─ KPI principal: [EX: ROAS 3:1 / CPA máximo R$ 50 / CPL máximo R$ 15]
+├─ Status: [Ativa / Teste / Pausada]
+└─ Notas: [Contexto importante sobre esta campanha]
+
+[ADICIONE MAIS CAMPANHAS CONFORME NECESSÁRIO]
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 4: TOM DE VOZ & IDENTIDADE
+═══════════════════════════════════════════════════════════════════════════════
+
+Adjetivos que descrevem a marca:
+[EX: Profissional, Casual, Amigável, Direto, Técnico, etc]
+
+Como você fala com este cliente?
+[EXEMPLO: Como um colega que entende do assunto / Como um mentor / Como uma amiga]
+
+Palavras-chave que a marca usa:
+[LISTA: eficiência, confiança, resultado, inovação, etc]
+
+Frases que funcionam:
+[EXEMPLOS de comunicação que ressoam com este cliente]
+
+O que NUNCA deve dizer:
+[EXEMPLOS de coisas que cliente não quer ouvir / Promessas que não podem fazer]
+
+Referências de marca similares:
+[OUTRAS MARCAS que têm tom/identidade parecida que você admira]
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 5: COMO VOCÊ TRABALHA
+═══════════════════════════════════════════════════════════════════════════════
+
+Frequência de análise:
+[Diária / Semanal / Bi-semanal / Mensal]
+
+Como recebe briefings:
+[WhatsApp / Email / Reunião / Formulário / Outro]
+
+Processo de aprovação:
+[EX: Envia copy, cliente aprova em 24h, rodar anúncio]
+[Lead time necessário: X horas/dias]
+
+Deadlines críticos:
+[EXEMPLO: Sexta é deadline absoluto para rodarem segunda]
+[Datas/períodos em que não trabalha?]
+
+Ferramentas que usa:
+[EX: Google Ads, Meta Ads Manager, Looker Studio, Google Analytics]
+
+Reuniões recorrentes:
+[EX: Call de planejamento toda segunda, revisão de resultados toda quinta]
+
+═══════════════════════════════════════════════════════════════════════════════
+SEÇÃO 6: REGRAS FIXAS
+═══════════════════════════════════════════════════════════════════════════════
+
+SEMPRE FAZER:
+├─ [REGRA 1]
+├─ [REGRA 2]
+├─ [REGRA 3]
+└─ [REGRA N]
+
+NUNCA FAZER:
+├─ [RESTRIÇÃO 1]
+├─ [RESTRIÇÃO 2]
+├─ [RESTRIÇÃO 3]
+└─ [RESTRIÇÃO N]
+
+RESTRIÇÕES TÉCNICAS:
+├─ Orçamento máximo: R$ [VALOR]
+├─ Público: [RESTRIÇÕES DE TARGETING]
+├─ Plataformas permitidas: [Google / Meta / TikTok / LinkedIn]
+├─ Linguagem: [PT-BR / PT-PT / Outro]
+└─ [OUTRA RESTRIÇÃO]
+
+POLÍTICAS DO CLIENTE:
+[LEIS, regulamentos, políticas internas que você precisa respeitar]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+VOCÊ TERMINOU!
+
+Agora você pode usar este projeto em todas as conversas sobre este cliente.
+
+Claude vai lembrar de:
+✓ Público-alvo (não vai perguntar de novo)
+✓ Tom de voz (cópias vão soar certo)
+✓ Campanhas ativas (sabe o contexto)
+✓ Regras (não vai violar restrições)
+✓ Processo de trabalho (sabe como você trabalha)
+
+Resultado: 6x mais rápido nas conversas.
+
+═══════════════════════════════════════════════════════════════════════════════
