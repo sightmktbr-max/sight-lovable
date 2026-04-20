@@ -114,16 +114,29 @@ const TemplateClaude = () => {
   setSubmitting(true);
 
   try {
-    const res = await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name,
-    email,
-  }),
-});
+    console.log("enviando pro webhook...");
+
+    await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+      }),
+    });
+
+    console.log("enviado!");
+
+    setSubmitted(true);
+
+  } catch (err) {
+    console.error("erro:", err);
+  } finally {
+    setSubmitting(false);
+  }
+};
 
     if (!res.ok) {
       throw new Error("Erro ao salvar contato");
