@@ -8,6 +8,7 @@ const navItems = [
   { label: "Início", path: "/" },
   { label: "Produtos", path: "/produtos" },
   { label: "Diagnóstico", path: "/diagnostico" },
+  { label: "Template Claude", path: "/template-claude" },
   { label: "Sobre", path: "/sobre" },
   { label: "Contato", path: "/contato" },
 ];
