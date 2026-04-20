@@ -7,6 +7,7 @@ import logoSight from "@/assets/logo-sight.png";
 const navItems = [
   { label: "Início", path: "/" },
   { label: "Produtos", path: "/produtos" },
+  { label: "Diagnóstico", path: "/diagnostico" },
   { label: "Sobre", path: "/sobre" },
   { label: "Contato", path: "/contato" },
 ];
