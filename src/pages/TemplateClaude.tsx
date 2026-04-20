@@ -114,7 +114,7 @@ const TemplateClaude = () => {
   setSubmitting(true);
 
   try {
-    const res = await fetch("https://formspree.io/f/mykldypv", {
+    const res = await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
