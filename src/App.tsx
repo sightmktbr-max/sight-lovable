@@ -14,6 +14,7 @@ import AIMediaOperator from "./pages/AIMediaOperator.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import Diagnostico from "./pages/Diagnostico.tsx";
+import TemplateClaude from "./pages/TemplateClaude.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/sobre" element={<About />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/diagnostico" element={<Diagnostico />} />
+          <Route path="/template-claude" element={<TemplateClaude />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
