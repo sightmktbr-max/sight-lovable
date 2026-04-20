@@ -114,7 +114,7 @@ const TemplateClaude = () => {
   setSubmitting(true);
 
   try {
-    const res = await fetch("https://formspree.io/f/SEU_ID", {
+    const res = await fetch("https://formspree.io/f/mykldypv", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
