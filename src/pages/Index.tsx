@@ -6,20 +6,30 @@ import toolkitImage from "@/assets/2ae6931f-442e-44d6-8d63-7bb76075bcd0.png";
 import sightOsImage from "@/assets/9ce797cc-eaf2-4814-9511-1bdb60e05e95.png";
 import aiMediaOperatorImage from "@/assets/ai-media-operator-hero.png";
 import sublogo from "@/assets/sight-sublogo.png";
+import heroBanner from "@/assets/sight-banner-desktop.svg";
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero — dark */}
       <section className="section-padding min-h-[85vh] flex items-center relative overflow-hidden">
-        {/* Sublogo — right side, half cut, 40% opacity */}
-        <div className="absolute top-0 right-0 h-full w-1/2 flex items-center justify-start overflow-hidden pointer-events-none">
-          <img
-            src={sublogo}
-            alt=""
-            className="h-full w-auto object-contain opacity-[0.08]"
-            style={{ transform: "translateX(-50%)" }}
+        {/* Hero banner background — video on mobile, SVG on desktop */}
+        <div className="absolute inset-0 pointer-events-none">
+          <video
+            src="/sight-banner-mobile.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
           />
+          <img
+            src={heroBanner}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-60 animate-fade-in hidden md:block"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/30 hidden md:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20 md:hidden" />
         </div>
 
         <div className="container-narrow mx-auto relative z-10">
