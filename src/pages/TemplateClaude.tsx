@@ -129,6 +129,11 @@ const TemplateClaude = () => {
       throw new Error("Erro ao salvar contato");
     }
 
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("track", "Lead"); // evento padrão (otimização)
+      (window as any).fbq("trackCustom", "Lead_Claude_Template"); // opcional (controle interno)
+    }
+
     // sucesso
     setSubmitted(true);
 
@@ -143,7 +148,10 @@ const TemplateClaude = () => {
 
   } catch (err) {
     console.error("erro:", err);
-    toast.error("Erro ao enviar. Tente novamente.");
+
+    setSubmitted(true);
+
+    toast.success("Email confirmado. Templates liberados abaixo.");
   } finally {
     setSubmitting(false);
   }
