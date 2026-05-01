@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Check, Copy, Download, ArrowRight, FileText, Briefcase, ShoppingBag } from "lucide-react";
-import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -129,9 +128,19 @@ const TemplateClaude = () => {
       throw new Error("Erro ao salvar contato");
     }
 
-    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-      (window as any).fbq("track", "Lead"); // evento padrão (otimização)
-      (window as any).fbq("trackCustom", "Lead_Claude_Template"); // opcional (controle interno)
+    if (typeof window !== "undefined") {
+      // Meta
+      if (typeof (window as any).fbq === "function") {
+        (window as any).fbq("track", "Lead");
+        (window as any).fbq("trackCustom", "Lead_Claude_Template");
+      }
+
+      // GTM / GA4
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "generate_lead",
+        lead_source: "template_claude",
+      });
     }
 
     // sucesso
