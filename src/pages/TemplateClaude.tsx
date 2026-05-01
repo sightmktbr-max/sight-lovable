@@ -129,19 +129,18 @@ const TemplateClaude = () => {
     }
 
     if (typeof window !== "undefined") {
-      // Meta
-      if (typeof (window as any).fbq === "function") {
-        (window as any).fbq("track", "Lead");
-        (window as any).fbq("trackCustom", "Lead_Claude_Template");
-      }
+  const w = window as any;
 
-      // GTM / GA4
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: "generate_lead",
-        lead_source: "template_claude",
-      });
-    }
+  if (typeof w.fbq === "function") {
+    w.fbq("track", "Lead");
+    w.fbq("trackCustom", "Lead_Claude_Template");
+  }
+
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({
+    event: "generate_lead",
+  });
+}
 
     // sucesso
     setSubmitted(true);
