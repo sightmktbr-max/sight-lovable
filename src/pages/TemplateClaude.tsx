@@ -107,16 +107,14 @@ const TemplateClaude = () => {
     return Object.keys(next).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   if (!validate()) return;
 
   setSubmitting(true);
 
   try {
-    console.log("enviando pro webhook...");
-
-    await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
+    const res = await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -127,22 +125,11 @@ const TemplateClaude = () => {
       }),
     });
 
-    console.log("enviado!");
-
-    setSubmitted(true);
-
-  } catch (err) {
-    console.error("erro:", err);
-  } finally {
-    setSubmitting(false);
-  }
-};
-
     if (!res.ok) {
       throw new Error("Erro ao salvar contato");
     }
 
-    // sucesso → libera conteúdo
+    // sucesso
     setSubmitted(true);
 
     toast.success("Email confirmado. Templates liberados abaixo.");
@@ -155,7 +142,7 @@ const TemplateClaude = () => {
     }, 400);
 
   } catch (err) {
-    console.error(err);
+    console.error("erro:", err);
     toast.error("Erro ao enviar. Tente novamente.");
   } finally {
     setSubmitting(false);
