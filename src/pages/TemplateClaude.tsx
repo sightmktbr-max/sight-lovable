@@ -124,6 +124,7 @@ const TemplateClaude = () => {
   email,
   source: "template_claude",
 }),
+});
 
     if (!res.ok) {
       throw new Error("Erro ao salvar contato");
