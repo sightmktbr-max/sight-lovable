@@ -74,20 +74,52 @@ const AIMediaOperator = () => {
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setSending(true);
-    try {
-      const mailtoLink = `mailto:contato@sightmkt.com.br?subject=${encodeURIComponent("Lista de espera — AI Media Operator")}&body=${encodeURIComponent(`Email para lista de espera: ${email}`)}`;
-      window.open(mailtoLink, "_blank");
-      setSent(true);
-      setEmail("");
-    } catch {
-      // silent
-    } finally {
-      setSending(false);
+  e.preventDefault();
+
+  if (!email.trim()) return;
+
+  setSending(true);
+
+  try {
+    const res = await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        source: "ai_media_operator",
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Erro ao enviar");
     }
-  };
+
+    if (typeof window !== "undefined") {
+      const w = window as any;
+
+      if (typeof w.fbq === "function") {
+        w.fbq("track", "Lead");
+        w.fbq("trackCustom", "Lead_AI_Media_Operator");
+      }
+
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: "generate_lead",
+      });
+    }
+
+    setSent(true);
+    setEmail("");
+
+  } catch (err) {
+    console.error(err);
+    setSent(true);
+  } finally {
+    setSending(false);
+  }
+};
 
   return (
     <Layout>
