@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, Send } from "lucide-react";
+import { ArrowRight, Send, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -21,7 +21,7 @@ const Contact = () => {
     }
     setSending(true);
 
-    const subject = encodeURIComponent(`Contato via site — ${form.name}`);
+    const subject = encodeURIComponent(`Contato via site - ${form.name}`);
     const body = encodeURIComponent(
       `Nome: ${form.name}\nEmail: ${form.email}\n\nMensagem:\n${form.message}`
     );
@@ -116,6 +116,18 @@ const Contact = () => {
                 <Send size={18} />
               </button>
             </form>
+            <div className="mt-10 pt-8 border-t border-[hsl(var(--light-border))] text-center">
+              <p className="text-sm text-[hsl(var(--light-subtle))] mb-3">Conecte-se com a Sight</p>
+              <a
+                href="https://www.linkedin.com/in/ana-rocha-252793138/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[hsl(var(--light-fg))] font-medium hover:opacity-70 transition-opacity"
+              >
+                <Linkedin size={18} />
+                LinkedIn
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>
