@@ -19,24 +19,71 @@ const SightOS = () => {
   const [osForm, setOsForm] = useState({ name: "", email: "" });
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!osForm.name.trim() || !osForm.email.trim()) {
-      toast({ title: "Preencha todos os campos.", variant: "destructive" });
-      return;
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!osForm.name.trim() || !osForm.email.trim()) {
+    toast({
+      title: "Preencha todos os campos.",
+      variant: "destructive",
+    });
+    return;
+  }
+
+  setSending(true);
+
+  try {
+    const res = await fetch("https://hook.us2.make.com/0alcxqrkdyrdsgkgfdgl5mmt7trobecp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: osForm.name,
+        email: osForm.email,
+        source: "sight_os",
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Erro ao enviar");
     }
-    setSending(true);
-    const subject = encodeURIComponent(`Lista de espera Sight OS — ${osForm.name}`);
-    const body = encodeURIComponent(
-      `Nome: ${osForm.name}\nEmail: ${osForm.email}\n\nGostaria de ser avisado quando o Sight OS estiver disponível.`
-    );
-    window.location.href = `mailto:contato@sightmkt.com.br?subject=${subject}&body=${body}`;
-    setTimeout(() => {
-      setSending(false);
-      toast({ title: "Seu cliente de e-mail foi aberto." });
-      setOsForm({ name: "", email: "" });
-    }, 1000);
-  };
+
+    if (typeof window !== "undefined") {
+      const w = window as any;
+
+      if (typeof w.fbq === "function") {
+        w.fbq("track", "Lead");
+        w.fbq("trackCustom", "Lead_Sight_OS");
+      }
+
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: "generate_lead",
+      });
+    }
+
+    toast({
+      title: "Você entrou na lista de espera.",
+    });
+
+    setOsForm({
+      name: "",
+      email: "",
+    });
+
+  } catch (err) {
+    console.error(err);
+
+    toast({
+      title: "Erro ao entrar na lista.",
+      variant: "destructive",
+    });
+
+  } finally {
+    setSending(false);
+  }
+};
 
   return (
     <Layout>
