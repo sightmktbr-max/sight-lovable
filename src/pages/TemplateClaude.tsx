@@ -303,7 +303,7 @@ const TemplateClaude = () => {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Seu nome"
-                      className="rounded-none h-12"
+                      className="rounded-none h-12 bg-white text-black border-border placeholder:text-gray-500 focus:bg-white focus:text-black"
                     />
                     {errors.name && <p className="text-sm text-destructive mt-2">{errors.name}</p>}
                   </div>
@@ -315,7 +315,7 @@ const TemplateClaude = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="seu@email.com"
-                      className="rounded-none h-12"
+                      className="rounded-none h-12 bg-white text-black border-border placeholder:text-gray-500 focus:bg-white focus:text-black"
                     />
                     {errors.email && <p className="text-sm text-destructive mt-2">{errors.email}</p>}
                   </div>
@@ -401,9 +401,9 @@ const TemplateClaude = () => {
 
                           <p className="text-sm text-text-subtle mb-4 italic">{t.instructions}</p>
 
-                          <pre className="bg-background border border-border p-4 md:p-6 overflow-x-auto text-xs leading-relaxed text-text-body max-h-[500px] overflow-y-auto whitespace-pre-wrap font-mono">
-{contents[key] || "Carregando..."}
-                          </pre>
+                          <pre className="bg-background border border-border p-4 md:p-6 overflow-x-auto text-xs leading-relaxed text-gray-200 max-h-[500px] overflow-y-auto whitespace-pre-wrap font-mono">
+  {contents[key] || "Carregando..."}
+</pre>
                         </div>
                       </TabsContent>
                     );
