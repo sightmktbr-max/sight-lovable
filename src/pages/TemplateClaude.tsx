@@ -120,10 +120,10 @@ const TemplateClaude = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
-        email,
-      }),
-    });
+  name,
+  email,
+  source: "template_claude",
+}),
 
     if (!res.ok) {
       throw new Error("Erro ao salvar contato");
