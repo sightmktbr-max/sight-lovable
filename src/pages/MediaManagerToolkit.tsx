@@ -100,7 +100,7 @@ const MediaManagerToolkit = () => {
           </FadeIn>
           <FadeIn delay={0.22}>
             <a
-              href="https://pay.kiwify.com.br/gnqfhMc"
+              href="https://pay.kiwify.com.br/62HSd2E"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity mb-16"
@@ -208,7 +208,7 @@ const MediaManagerToolkit = () => {
           </FadeIn>
           <FadeIn delay={0.14}>
             <a
-              href="https://pay.kiwify.com.br/gnqfhMc"
+              href="https://pay.kiwify.com.br/62HSd2E"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-foreground text-background px-10 py-4 text-base font-medium rounded-sm hover:opacity-90 transition-opacity"
