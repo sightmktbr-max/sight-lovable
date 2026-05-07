@@ -118,15 +118,41 @@ const Contact = () => {
             </form>
             <div className="mt-10 pt-8 border-t border-[hsl(var(--light-border))] text-center">
               <p className="text-sm text-[hsl(var(--light-subtle))] mb-3">Conecte-se com a Sight</p>
-              <a
-                href="https://www.linkedin.com/in/ana-rocha-252793138/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[hsl(var(--light-fg))] font-medium hover:opacity-70 transition-opacity"
-              >
-                <Linkedin size={18} />
-                LinkedIn
-              </a>
+              <div className="flex items-center justify-center gap-6">
+                <a
+                  href="https://www.linkedin.com/in/ana-rocha-252793138/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[hsl(var(--light-fg))] font-medium hover:opacity-70 transition-opacity"
+                >
+                  <Linkedin size={18} />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://www.instagram.com/sightmkt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[hsl(var(--light-fg))] font-medium hover:opacity-70 transition-opacity"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/@sightmktbr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[hsl(var(--light-fg))] font-medium hover:opacity-70 transition-opacity"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.5-4.42 2.89 2.89 0 0 1 3.38-.85V9.63a6.23 6.23 0 0 0-5.5 1.38 6.23 6.23 0 0 0-1.62 7.65 6.23 6.23 0 0 0 10.6-2.25V6.69h.02z" />
+                  </svg>
+                  TikTok
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>
