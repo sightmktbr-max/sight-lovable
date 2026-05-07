@@ -308,8 +308,10 @@ const AIMediaOperator = () => {
             {steps.map((step, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
-                  <span className="font-serif text-6xl md:text-7xl text-foreground/10 leading-none">{step.number}</span>
-                  <div>
+  <span className="font-serif text-6xl md:text-7xl text-foreground/10 leading-none w-[90px] shrink-0 text-left">
+    {step.number}
+  </span>
+  <div>
                     <h3 className="font-serif text-2xl text-foreground mb-3">{step.title}</h3>
                     <p className="text-text-body leading-relaxed max-w-lg">{step.desc}</p>
                   </div>
